@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiApp3.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp3"
+    Shell.FlyoutBehavior="Disabled"
+    xmlns:views="clr-namespace:MauiApp3.Views" 
+    Title="MauiApp3">
+
+    <TabBar>
+        <Tab Title="Status" Icon="status_icon.png">
+            <ShellContent ContentTemplate="{DataTemplate views:StatusPage}" />
+        </Tab>
+        <Tab Title="Calls" Icon="status_icon.png">
+            <ShellContent ContentTemplate="{DataTemplate views:CallsPage}" />
+        </Tab>
+        <Tab Title="Camera" Icon="status_icon.png">
+            <ShellContent ContentTemplate="{DataTemplate views:CameraPage}" />
+        </Tab>
+        <Tab Title="Chats" Icon="chats_icon.png">
+            <ShellContent ContentTemplate="{DataTemplate views:ChatsPage}" />
+        </Tab>
+        <Tab Title="Settings" Icon="status_icon.png">
+            <ShellContent ContentTemplate="{DataTemplate views:SettingsPage}" />
+        </Tab>
+    </TabBar>
+
+</Shell>
