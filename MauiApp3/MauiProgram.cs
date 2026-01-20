@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
-
+using CommunityToolkit.Maui;
 namespace MauiApp3
 {
     public static class MauiProgram
@@ -9,6 +9,7 @@ namespace MauiApp3
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseMauiCommunityToolkitCamera()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -18,7 +19,7 @@ namespace MauiApp3
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
-
+            
             return builder.Build();
         }
     }

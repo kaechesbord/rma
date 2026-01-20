@@ -1,0 +1,61 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp3.Views.SpecificChatPage"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible ="False"
+             BackgroundColor="#E5DDD5">
+    <Grid RowDefinitions="Auto, *, Auto">
+
+        <HorizontalStackLayout Grid.Row="0" BackgroundColor="#F6F6F6" Padding="15,40,15,10" Spacing="10">
+            <Image Source="running.svg" WidthRequest="20" VerticalOptions="End" />
+
+            <Image Source="{Binding ProfilePicture}" WidthRequest="40" HeightRequest="40">
+                <Image.Clip>
+                    <EllipseGeometry Center="20,20" RadiusX="20" RadiusY="20" />
+                </Image.Clip>
+            </Image>
+            <VerticalStackLayout VerticalOptions="Center">
+                <Label Text="{Binding ContactName}" FontAttributes="Bold" FontSize="16" />
+                <Label Text="tap here for contact info" FontSize="11" TextColor="Gray" />
+            </VerticalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="EndAndExpand" Spacing="20" VerticalOptions="Center">
+                <Image Source="video_icon.png" WidthRequest="22" />
+                <Image Source="phone_icon.png" WidthRequest="22" />
+            </HorizontalStackLayout>
+        </HorizontalStackLayout>
+
+        <CollectionView Grid.Row="1" ItemsSource="{Binding Messages}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="5">
+                        <Frame BackgroundColor="{Binding IsIncoming, Converter={StaticResource ColorConverter}}"
+                               HorizontalOptions="{Binding IsIncoming, Converter={StaticResource AlignmentConverter}}"
+                               CornerRadius="10"
+                               HasShadow="False"
+                               Padding="10">
+
+                            <VerticalStackLayout>
+                                <Label Text="{Binding Text}" IsVisible="{Binding IsImage, Converter={StaticResource InvertedBool}}" />
+
+                                <HorizontalStackLayout IsVisible="{Binding IsImage}" Spacing="10">
+                                    <Image Source="file_icon.png" WidthRequest="30" />
+                                    <Label Text="{Binding FileName}" VerticalOptions="Center" />
+                                </HorizontalStackLayout>
+
+                                <Label Text="{Binding Time}" FontSize="10" HorizontalOptions="End" TextColor="Gray" />
+                            </VerticalStackLayout>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Grid Grid.Row="2" ColumnDefinitions="Auto, *, Auto, Auto" Padding="10" BackgroundColor="White">
+            <Button Grid.Column="0" Text="+" BackgroundColor="Transparent" TextColor="#007AFF" FontSize="24"/>
+            <Entry Grid.Column="1" Placeholder="Type a message..." BackgroundColor="#F0F0F0" />
+            <Image Grid.Column="2" Source="camera_icon.png" WidthRequest="25" Margin="5,0"/>
+            <Image Grid.Column="3" Source="mic_icon.png" WidthRequest="25" Margin="5,0"/>
+        </Grid>
+    </Grid>
+</ContentPage>

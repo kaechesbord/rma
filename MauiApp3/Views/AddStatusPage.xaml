@@ -1,0 +1,31 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="MauiApp3.Views.AddStatusPage"
+             BackgroundColor="#FB8B8B" 
+             Shell.NavBarIsVisible="False" 
+             Shell.TabBarIsVisible ="False">
+    <Grid RowDefinitions="Auto, *">
+
+        <Grid Grid.Row="0" ColumnDefinitions="Auto, *, Auto, Auto" Padding="20, 20, 20, 0">
+            <ImageButton Grid.Column="0" Source="close_white.svg" Clicked="OnBackClicked" WidthRequest="25" HeightRequest="25" BackgroundColor="Transparent" />
+   
+            <HorizontalStackLayout Grid.Column="3" Spacing="25">
+                <Label Text="T" TextColor="White" FontSize="28" FontAttributes="Bold" VerticalOptions="Center"/>
+                <Image Source="pallette_icon.svg" WidthRequest="30" HeightRequest="30" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+        </Grid>
+
+        <VerticalStackLayout Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" Padding="40">
+            <Editor x:Name="StatusEditor"
+                    Placeholder="Type a status"
+                    PlaceholderColor="#E0FFFFFF" 
+                    TextColor="White"
+                    FontSize="45"
+                    HorizontalTextAlignment="Center"
+                    AutoSize="TextChanges"
+                    BackgroundColor="Transparent"
+                    Keyboard="Plain" />
+        </VerticalStackLayout>
+
+    </Grid>
+</ContentPage>

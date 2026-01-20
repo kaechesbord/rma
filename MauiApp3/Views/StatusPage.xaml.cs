@@ -2,8 +2,14 @@ namespace MauiApp3.Views;
 
 public partial class StatusPage : ContentPage
 {
-	public StatusPage()
+    private async void OnMyStatusTapped(object sender, EventArgs e)
+    {
+        
+        await Navigation.PushAsync(new AddStatusPage());
+    }
+    public StatusPage()
 	{
-		InitializeComponent();
+        BindingContext = this;
+        InitializeComponent();
 	}
 }

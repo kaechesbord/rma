@@ -21,6 +21,16 @@ namespace MauiApp3.ViewModels
             new Call { Name = "Karen Castillo", CallType = "outgoing", Date = new DateTime(2019, 10, 11), ProfileImage = "p2.jpg" },
             new Call { Name = "Kieron Dotson", CallType = "outgoing", Date = new DateTime(2019, 10, 8), ProfileImage = "p3.jpg" },
             new Call { Name = "Karen Castillo", CallType = "missed", Date = new DateTime(2019, 9, 30), ProfileImage = "p2.jpg" },
+            new Call { Name = "Zack John", CallType = "incoming", Date = new DateTime(2019, 9, 24), ProfileImage = "p4.jpg" },
+            new Call { Name = "Martin Randolph", CallType = "outgoing", Date = new DateTime(2019, 10, 13), ProfileImage = "p1.jpg" },
+            new Call { Name = "Karen Castillo", CallType = "outgoing", Date = new DateTime(2019, 10, 11), ProfileImage = "p2.jpg" },
+            new Call { Name = "Kieron Dotson", CallType = "outgoing", Date = new DateTime(2019, 10, 8), ProfileImage = "p3.jpg" },
+            new Call { Name = "Karen Castillo", CallType = "missed", Date = new DateTime(2019, 9, 30), ProfileImage = "p2.jpg" },
+            new Call { Name = "Zack John", CallType = "incoming", Date = new DateTime(2019, 9, 24), ProfileImage = "p4.jpg" },
+            new Call { Name = "Martin Randolph", CallType = "outgoing", Date = new DateTime(2019, 10, 13), ProfileImage = "p1.jpg" },
+            new Call { Name = "Karen Castillo", CallType = "outgoing", Date = new DateTime(2019, 10, 11), ProfileImage = "p2.jpg" },
+            new Call { Name = "Kieron Dotson", CallType = "outgoing", Date = new DateTime(2019, 10, 8), ProfileImage = "p3.jpg" },
+            new Call { Name = "Karen Castillo", CallType = "missed", Date = new DateTime(2019, 9, 30), ProfileImage = "p2.jpg" },
             new Call { Name = "Zack John", CallType = "incoming", Date = new DateTime(2019, 9, 24), ProfileImage = "p4.jpg" }
         };
         }

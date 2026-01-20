@@ -1,12 +1,72 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="MauiApp3.Views.CallsPage"
-             Title="CallsPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             BackgroundColor="White">
+
+    <Grid RowDefinitions="Auto, *">
+
+        <Grid Grid.Row="0" ColumnDefinitions="Auto, *, Auto" Padding="15, 10">
+            <Button Text="Edit" 
+                    TextColor="#007AFF" 
+                    BackgroundColor="Transparent" 
+                    FontSize="17" 
+                    HorizontalOptions="Start" />
+
+            <Border Grid.Column="1" 
+                    Stroke="#007AFF" 
+                    StrokeThickness="1" 
+                    HorizontalOptions="Center" 
+                    HeightRequest="32" 
+                    Padding="0"
+                    StrokeShape="RoundRectangle 8">
+                <HorizontalStackLayout>
+                    <Label Text="All" BackgroundColor="#007AFF" TextColor="White" 
+                           VerticalTextAlignment="Center" HorizontalTextAlignment="Center" WidthRequest="80" />
+                    <Label Text="Missed" TextColor="#007AFF" 
+                           VerticalTextAlignment="Center" HorizontalTextAlignment="Center" WidthRequest="80" />
+                </HorizontalStackLayout>
+            </Border>
+
+            <ImageButton Grid.Column="2" 
+                         Source="add_phone.svg" 
+                         HeightRequest="24" 
+                         BackgroundColor="Transparent" />
+        </Grid>
+
+        <CollectionView Grid.Row="1" ItemsSource="{Binding Calls}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="60, *, Auto" Padding="15, 10" RowDefinitions="Auto">
+                        <Image Source="{Binding ProfileImage}" 
+                               Grid.Column="0"
+                               HeightRequest="45" WidthRequest="45"
+                               Aspect="AspectFill">
+                            <Image.Clip>
+                                <EllipseGeometry Center="22.5, 22.5" RadiusX="22.5" RadiusY="22.5" />
+                            </Image.Clip>
+                        </Image>
+
+                        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="2">
+                            <Label Text="{Binding Name}" 
+                                   TextColor="{Binding NameColor}" 
+                                   FontSize="17" FontAttributes="Bold" />
+                            <HorizontalStackLayout Spacing="5">
+                                <Image Source="phone.svg" HeightRequest="12" Opacity="0.5"/>
+                                <Label Text="{Binding CallType}" TextColor="Gray" FontSize="14" />
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+
+                        <HorizontalStackLayout Grid.Column="2" VerticalOptions="Center" Spacing="10">
+                            <Label Text="{Binding Date}" TextColor="Gray" FontSize="14" VerticalOptions="Center"/>
+                            <Image Source="info_blue.svg" HeightRequest="22" WidthRequest="22" />
+                        </HorizontalStackLayout>
+
+                        <BoxView Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" 
+                                 HeightRequest="0.5" Color="#E5E5E5" 
+                                 VerticalOptions="End" Margin="0,0,0,-10"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
 </ContentPage>

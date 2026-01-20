@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace MauiApp3.Modeli
 {
-    internal class Message
+    public class Message
     {
+        public string Text { get; set; }
+        public string Time { get; set; }
+        public bool IsIncoming { get; set; }
+        public bool IsImage { get; set; } // Za simulaciju onih fajlova u chatu
+        public string FileName { get; set; }
     }
 }

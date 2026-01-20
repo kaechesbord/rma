@@ -19,7 +19,9 @@
             <Label Grid.Column="1" Text="New Group" TextColor="#007AFF" HorizontalOptions="End"/>
         </Grid>
 
-        <CollectionView Grid.Row="2" ItemsSource="{Binding Chats}" Margin="0,10,0,0">
+        <CollectionView Grid.Row="2" ItemsSource="{Binding Chats}"  
+                SelectionMode="Single"
+                SelectionChanged="OnChatSelected" Margin="0,10,0,0">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <SwipeView>
