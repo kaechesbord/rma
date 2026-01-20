@@ -5,7 +5,7 @@
 
     <Grid RowDefinitions="Auto, *">
 
-        <Grid Grid.Row="0" ColumnDefinitions="Auto, *, Auto" Padding="15, 10">
+        <Grid Grid.Row="0" ColumnDefinitions="Auto, *, Auto"  Padding="15, 10" >
             <Button Text="Edit" 
                     TextColor="#007AFF" 
                     BackgroundColor="Transparent" 
@@ -29,8 +29,10 @@
 
             <ImageButton Grid.Column="2" 
                          Source="add_phone.svg" 
-                         HeightRequest="24" 
-                         BackgroundColor="Transparent" />
+                         HeightRequest="24" WidthRequest="25"
+                         HorizontalOptions="EndAndExpand"
+                         BackgroundColor="Transparent" Margin="20,0,0,0"
+                         />
         </Grid>
 
         <CollectionView Grid.Row="1" ItemsSource="{Binding Calls}">
@@ -57,7 +59,7 @@
                         </VerticalStackLayout>
 
                         <HorizontalStackLayout Grid.Column="2" VerticalOptions="Center" Spacing="10">
-                            <Label Text="{Binding Date}" TextColor="Gray" FontSize="14" VerticalOptions="Center"/>
+                            <Label Text="{Binding Date,StringFormat='{0:dd/M/yyyy}'}" TextColor="Gray" FontSize="14" VerticalOptions="Center"/>
                             <Image Source="info_blue.svg" HeightRequest="22" WidthRequest="22" />
                         </HorizontalStackLayout>
 

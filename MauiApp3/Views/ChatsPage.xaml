@@ -9,9 +9,9 @@
     <Grid RowDefinitions="Auto, Auto, *, Auto">
 
         <Grid Grid.Row="0" ColumnDefinitions="Auto, *, Auto" Padding="15, 10">
-            <Button Text="Edit" TextColor="#007AFF" BackgroundColor="Transparent" HorizontalOptions="Start"/>
-            <Label Grid.Column="1" Text="Chats" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
-            <ImageButton Grid.Column="2" Source="edit_icon.png" HeightRequest="25" HorizontalOptions="End"/>
+            <Button Text="Edit" TextColor="#007AFF" BackgroundColor="Transparent" Margin="35,0,0,0" HorizontalOptions="Start"/>
+            <Label Grid.Column="1" Text="Chats" FontSize="18" FontAttributes="Bold" Margin="25,0,0,0" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <ImageButton Grid.Column="2" Source="edit_icon.svg" HeightRequest="25" HorizontalOptions="End"/>
         </Grid>
 
         <Grid Grid.Row="1" ColumnDefinitions="*, *" Padding="15, 5">

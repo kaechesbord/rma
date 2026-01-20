@@ -12,6 +12,8 @@
             <Label Text="Settings" 
            HorizontalTextAlignment="Center" 
            VerticalTextAlignment="Center"
+                   VerticalOptions="Center"
+                   Margin="20, 0, 0, 0"
            FontAttributes="Bold"
            FontSize="18"
            HorizontalOptions="FillAndExpand" />

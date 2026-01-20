@@ -13,7 +13,7 @@
     Title="MauiApp3">
 
     <TabBar>
-        <Tab Title="Status" Icon="running.svg">
+        <Tab Title="Status" Icon="running.svg" Route="StatusPage">
             <ShellContent ContentTemplate="{DataTemplate views:StatusPage}" />
         </Tab>
         <Tab Title="Calls" Icon="phone.svg">
